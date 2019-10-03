@@ -1,8 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "react-bulma-components/dist/react-bulma-components.min.css"
-import { Heading, Container } from 'react-bulma-components'
 
 
 import NavbarComponent from "../components/navbar"
