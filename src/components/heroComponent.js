@@ -6,8 +6,7 @@ import Image from "./image"
 
 import doubleDownChevron from "../images/chevron-double-down.svg"
 
-const NavbarComponent = ({ data }) => {
-  console.log(data)
+const NavbarComponent = () => {
   return (
     <Hero size="fullheight-with-navbar">
       <Hero.Body>
