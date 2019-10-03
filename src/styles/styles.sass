@@ -10,6 +10,26 @@ $navbar-item-hover-background-color: transparent;
   justify-content: center;
 
 .memoji-image-wrapper
-  max-height: 320px;
   max-width: 75%;
   margin: 0 auto;
+  @media screen and ( min-width: $tablet )
+    max-width: 320px;
+
+$chevron-jumping-height: 20px;
+@keyframes jump 
+  0%
+    bottom: 0;
+  50% 
+    bottom: $chevron-jumping-height;
+  100% 
+    bottom: 0;
+
+.chevron-down-container
+  display: flex;
+  justify-content: center;
+
+.chevron-down
+  height: 24px;
+  position: relative;
+  animation: jump 5s infinite;
+  animation-timing-function: ease-in-out;

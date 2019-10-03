@@ -27,6 +27,13 @@ const NavbarComponent = ({ data }) => {
           </Column.Group>
         </Container>
       </Hero.Body>
+      <Hero.Foot>
+        <Container>
+          <div className="chevron-down-container">
+            <img className="chevron-down" alt="Double arrow down" src={doubleDownChevron} />
+          </div>
+        </Container>
+      </Hero.Foot>
     </Hero >
 
   )
