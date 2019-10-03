@@ -1,17 +1,17 @@
 import React from "react"
-import "../styles/styles.sass"
 
+import Layout from "../components/layout"
 import NavbarComponent from "../components/navbarComponent"
 import HeroComponent from "../components/heroComponent"
 import FooterComponent from "../components/footerComponent"
 
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <NavbarComponent />
     <HeroComponent />
     <FooterComponent />
-  </div >
+  </Layout >
 )
 
 export default IndexPage
