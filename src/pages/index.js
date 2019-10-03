@@ -1,21 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
 import "../styles/styles.sass"
 
-
-
-import NavbarComponent from "../components/navbar"
+import NavbarComponent from "../components/navbarComponent"
+import HeroComponent from "../components/heroComponent"
+import FooterComponent from "../components/footerComponent"
 
 
 const IndexPage = () => (
   <div>
     <NavbarComponent />
-    <div>
-      <Container>
-        <Heading>Hi! I'm Vilhelm Melktsam.</Heading>
-      </Container>
-    </div>
-  </div>
+    <HeroComponent />
+    <FooterComponent />
+  </div >
 )
 
 export default IndexPage
