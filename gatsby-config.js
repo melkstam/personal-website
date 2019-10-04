@@ -3,12 +3,20 @@ module.exports = {
     title: `Vilhelm Melkstam`,
     description: `Personal website showing off what I have done`,
     author: `Vilhelm Melkstam`,
+    siteUrl: `https://melkstam.com`
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.svg`
+      }
+    },
+    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        createLinkInHead: true
       }
     },
     `gatsby-plugin-react-helmet`,
