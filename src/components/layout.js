@@ -12,6 +12,7 @@ const Layout = (props) => (
       <title>Vilhelm Melkstam</title>
 
       <meta name="description" content="Vilhelm Melkstam's personal website showcasing who I am and what I have done." />
+      <link rel="canonical" href="https://melkstam.com" />
     </Helmet>
     {props.children}
   </div >
