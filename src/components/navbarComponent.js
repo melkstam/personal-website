@@ -5,6 +5,9 @@ import { Container, Navbar } from 'rbx'
 const NavbarComponent = () => (
   <Navbar>
     <Container>
+      <Navbar.Brand>
+        <Navbar.Burger />
+      </Navbar.Brand>
       <Navbar.Menu active="true">
         <Navbar.Segment align="end">
           <Navbar.Item href="#">About me</Navbar.Item>
