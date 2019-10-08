@@ -32,6 +32,7 @@ module.exports = {
       options: {
         trackingId: `UA-56677957-3`,
         head: true,
+        anonymize: true,
       }
     },
     `gatsby-transformer-sharp`,
