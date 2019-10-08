@@ -5,7 +5,7 @@ import { Footer, Container } from 'rbx'
 const FooterComponent = () => (
   <Footer>
     <Container>
-      This is a footer
+      Made by Vilhelm Melktam © {new Date().getFullYear()}
     </Container>
   </Footer>
 )
