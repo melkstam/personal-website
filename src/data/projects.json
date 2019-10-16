@@ -1,0 +1,20 @@
+[
+  {
+    "title": "PaperIO",
+    "image": "paperio.png",
+    "description": "PaperIO is a clone of the online game with the same name. Me and my classmate made this in a course on OOP.",
+    "readMoreLink": "https://github.com/vilhelmmelkstam/paper.io"
+  },
+  {
+    "title": "Personal website",
+    "image": "personal-website.png",
+    "description": "This website is for showcasing what I have done and who I am.",
+    "readMoreLink": "https://github.com/vilhelmmelkstam/personal-website"
+  },
+  {
+    "title": "VBHR",
+    "image": "vbhr.png",
+    "description": "Vi bygger hållbara relationer is a website viewing information about the services they deliver and events they host.",
+    "readMoreLink": "https://vbhr.se/"
+  }
+]
