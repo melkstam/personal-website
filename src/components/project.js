@@ -15,7 +15,9 @@ const Project = ({ id, title, image, description, readMoreLink }) => (
   >
     <Card className="project-card">
       <Card.Image>
-        <Image alt={title} filename={image} />
+        <div>
+          <Image alt={title} filename={image} />
+        </div>
       </Card.Image>
       <Card.Header>
         <Card.Header.Title>
@@ -23,8 +25,15 @@ const Project = ({ id, title, image, description, readMoreLink }) => (
         </Card.Header.Title>
       </Card.Header>
       <Card.Content>
-        <p>{description} <a href={readMoreLink}>Read more.</a></p>
+        <p>{description}</p>
       </Card.Content>
+      <Card.Footer>
+        <a href={readMoreLink}>
+          <Card.Footer.Item>
+            Read more
+          </Card.Footer.Item>
+        </a>
+      </Card.Footer>
     </Card>
   </Column>
 )

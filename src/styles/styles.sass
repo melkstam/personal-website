@@ -53,7 +53,27 @@ $chevron-jumping-height: 20px;
   text-decoration: underline
   margin-bottom: 0.5em
 
-
 .project-card
+  display: flex
+  flex-direction: column
   height: 100%
+
+  .card-image
+    padding-top: 56.25%
+
+    &> div
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+
+      &> .gatsby-image-wrapper
+        height: 100%
+
+
+  .card-content
+    flex: 1
   
+  .card-footer > a
+    width: 100%
