@@ -6,7 +6,7 @@ const NavbarComponent = () => (
   <Navbar>
     <Container>
       <Navbar.Brand>
-        <Navbar.Burger />
+        <Navbar.Burger aria-label="Open navbar menu" />
       </Navbar.Brand>
       <Navbar.Menu active="true">
         <Navbar.Segment align="end">
