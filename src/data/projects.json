@@ -16,5 +16,11 @@
     "image": "vbhr.png",
     "description": "Vi bygger hållbara relationer is a website viewing information about the services they deliver and events they host.",
     "readMoreLink": "https://vbhr.se/"
+  },
+  {
+    "title": "Linkdagarna",
+    "image": "linkdagarna.jpg",
+    "description": "Linkdagarna is the job fair for computer science students at Linköping University. Here I helped build the website and surrounging IT systems that where at use.",
+    "readMoreLink": "https://linkdagarna.se"
   }
 ]
