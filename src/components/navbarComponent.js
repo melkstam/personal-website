@@ -11,7 +11,7 @@ const NavbarComponent = () => (
       <Navbar.Menu active="true">
         <Navbar.Segment align="end">
           <Navbar.Item href="#about-me-section">About me</Navbar.Item>
-          <Navbar.Item href="#">Projects</Navbar.Item>
+          <Navbar.Item href="#projects-section">Projects</Navbar.Item>
           <Navbar.Item href="#">Contact</Navbar.Item>
         </Navbar.Segment>
       </Navbar.Menu>
