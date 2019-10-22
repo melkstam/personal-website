@@ -1,10 +1,12 @@
-import React from "react"
+import React from 'react';
 
-import { Card, Column } from "rbx"
+import { Card, Column } from 'rbx';
 
-import Image from "./image"
+import Image from './image';
 
-const Project = ({ id, title, image, description, readMoreLink }) => (
+const Project = ({
+  id, title, image, description, readMoreLink,
+}) => (
   <Column
     mobile={{ size: 'half' }}
     tablet={{ size: 'half' }}
@@ -30,12 +32,12 @@ const Project = ({ id, title, image, description, readMoreLink }) => (
       <Card.Footer>
         <a href={readMoreLink}>
           <Card.Footer.Item>
-            Read more
+              Read more
           </Card.Footer.Item>
         </a>
       </Card.Footer>
     </Card>
   </Column>
-)
+);
 
-export default Project
+export default Project;

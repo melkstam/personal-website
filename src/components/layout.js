@@ -1,7 +1,7 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-import "../styles/styles.sass"
+import '../styles/styles.sass';
 
 
 const Layout = (props) => (
@@ -15,7 +15,7 @@ const Layout = (props) => (
       <link rel="canonical" href="https://melkstam.com" />
     </Helmet>
     {props.children}
-  </div >
-)
+  </div>
+);
 
 export default Layout;

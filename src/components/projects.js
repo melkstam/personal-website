@@ -1,15 +1,17 @@
-import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
-import { Section, Container, Title, Column } from "rbx"
+import {
+  Section, Container, Title, Column,
+} from 'rbx';
 
-import Project from "./project"
+import Project from './project';
 
 const Projects = () => (
   <Section id="projects-section">
     <Container>
       <Title>Projects</Title>
-      <Column.Group multiline breakpoint="mobile" >
+      <Column.Group multiline breakpoint="mobile">
         <StaticQuery
           query={graphql`
           {
@@ -24,17 +26,18 @@ const Projects = () => (
             }
           }
           `}
-          render={data => (
+          render={(data) => (
             data.allProjectsJson.nodes.map((projectData) => (
-              < Project key={projectData.id} {...projectData} />
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              <Project key={projectData.id} {...projectData} />
             ))
           )}
         />
       </Column.Group>
       <Title subtitle>…and more to come!</Title>
 
-    </Container >
-  </Section >
-)
+    </Container>
+  </Section>
+);
 
-export default Projects
+export default Projects;

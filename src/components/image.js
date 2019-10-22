@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 // Note: You can change "images" to whatever you'd like.
 
-const Image = props => (
+const Image = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -23,15 +23,13 @@ const Image = props => (
         }
       }
     `}
-    render={data => {
-      const image = data.images.edges.find(n => {
-        return n.node.relativePath.includes(props.filename);
-      });
+    render={(data) => {
+      const image = data.images.edges.find((n) => n.node.relativePath.includes(props.filename));
       if (!image) {
         return null;
       }
 
-      //const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
+      // const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
       return <Img alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
     }}
   />
