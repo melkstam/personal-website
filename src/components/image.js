@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -34,5 +35,10 @@ const Image = (props) => (
     }}
   />
 );
+
+Image.propTypes = {
+  alt: PropTypes.string.isRequired,
+  filename: PropTypes.string.isRequired,
+};
 
 export default Image;
