@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import '../styles/styles.sass';
 
 
-const Layout = (props) => (
+const Layout = ({ children }) => (
   <div>
     <Helmet>
       <html lang="en" />
@@ -15,7 +15,7 @@ const Layout = (props) => (
       <meta name="description" content="Vilhelm Melkstam's personal website showcasing who I am and what I have done." />
       <link rel="canonical" href="https://melkstam.com" />
     </Helmet>
-    {props.children}
+    {children}
   </div>
 );
 
