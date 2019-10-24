@@ -1,0 +1,50 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/personal-website
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.yarn-cache
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - personal-website
+
+  deploy:
+    working_directory: ~/personal-website
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - attach_workspace:
+          at: ~/personal-website
+      - run:
+          name: Install Now CLI
+          command: sudo npm i -g now
+      - run:
+          name: Deploy to Zeit Now
+          command: |
+            cd personal-website && now --prod --token $ZEIT_TOKEN
+
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
