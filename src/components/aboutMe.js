@@ -45,17 +45,17 @@ const AboutMe = () => (
             <Card.Content>
               <p className="experience-class-title">Languages</p>
               <Tag.Group>
-                {['Python', 'JavaScript', 'TypeScript', 'Java', 'HTML', 'CSS'].map((language, index) => <Tag key={index}>{language}</Tag>)}
+                {['Python', 'JavaScript', 'TypeScript', 'Java', 'HTML', 'CSS', 'c'].map((language, index) => <Tag key={index}>{language}</Tag>)}
               </Tag.Group>
 
               <p className="experience-class-title">Technologies</p>
               <Tag.Group>
-                {['React', 'GatsbyJS', 'WordPress'].map((technology, index) => <Tag key={index}>{technology}</Tag>)}
+                {['React', 'Gatsby', 'Next', 'WordPress'].map((technology, index) => <Tag key={index}>{technology}</Tag>)}
               </Tag.Group>
 
               <p className="experience-class-title">Tools</p>
               <Tag.Group>
-                {['Git', 'CircleCI', 'ZEIT now', 'Linux', 'Docker'].map((tool, index) => <Tag key={index}>{tool}</Tag>)}
+                {['Git', 'Github', 'CircleCI', 'Vercel', 'Linux', 'MacOS', 'Docker'].map((tool, index) => <Tag key={index}>{tool}</Tag>)}
               </Tag.Group>
             </Card.Content>
           </Card>
