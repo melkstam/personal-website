@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "personal-website",
+  "description": "The portfolio and personal webpage for Vilhelm Melkstam",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Vilhelm Melkstam <vilhelm.melkstame@gmail.com>",
   "dependencies": {
     "@mdi/js": "^5.5.55",
     "@mdi/react": "^1.4.0",
@@ -37,7 +36,8 @@
     "husky": "^4.2.5"
   },
   "keywords": [
-    "gatsby"
+    "portfolio",
+    "personal website"
   ],
   "license": "MIT",
   "scripts": {
