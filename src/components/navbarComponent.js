@@ -12,7 +12,7 @@ const NavbarComponent = () => (
         <Navbar.Segment align="end">
           <Navbar.Item href="#about-me-section">About me</Navbar.Item>
           <Navbar.Item href="#projects-section">Projects</Navbar.Item>
-          <Navbar.Item href="#">Contact</Navbar.Item>
+          <Navbar.Item href="#contact-section">Contact</Navbar.Item>
         </Navbar.Segment>
       </Navbar.Menu>
     </Container>

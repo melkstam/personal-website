@@ -32,7 +32,7 @@ const AboutMe = () => (
             Today I&apos;m looking for work and projects on the side of my studies. If you would
             like to work with me, let&apos;s
             {' '}
-            <a href="#contact">get in touch!</a>
+            <a href="#contact-section">get in touch!</a>
           </p>
         </Column>
         <Column size={3}>

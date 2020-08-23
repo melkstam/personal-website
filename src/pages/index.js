@@ -5,6 +5,7 @@ import NavbarComponent from '../components/navbarComponent';
 import HeroComponent from '../components/heroComponent';
 import Projects from '../components/projects';
 import AboutMe from '../components/aboutMe';
+import Contact from '../components/contact';
 import FooterComponent from '../components/footerComponent';
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <HeroComponent />
     <AboutMe />
     <Projects />
+    <Contact />
     <FooterComponent />
   </Layout>
 );
