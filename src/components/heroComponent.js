@@ -11,11 +11,6 @@ import Image from './image';
 
 const NavbarComponent = () => (
   <Hero size="fullheight-with-navbar">
-    <Hero.Head>
-      <Title as="h2" subtitle style={{ textAlign: 'center', textDecoration: 'underline' }}>
-        This site is currently under development. 🏗
-      </Title>
-    </Hero.Head>
     <Hero.Body>
       <Container>
         <Column.Group>
