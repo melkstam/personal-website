@@ -4,9 +4,10 @@ import {
   Hero, Container, Title, Column,
 } from 'rbx';
 
-import Image from './image';
+import Icon from '@mdi/react';
+import { mdiChevronDoubleDown } from '@mdi/js';
 
-import doubleDownChevron from '../images/chevron-double-down.svg';
+import Image from './image';
 
 const NavbarComponent = () => (
   <Hero size="fullheight-with-navbar">
@@ -35,7 +36,7 @@ const NavbarComponent = () => (
     <Hero.Foot>
       <Container>
         <div className="chevron-down-container">
-          <img className="chevron-down" alt="Double arrow down" src={doubleDownChevron} />
+          <Icon path={mdiChevronDoubleDown} size={1} />
         </div>
       </Container>
     </Hero.Foot>
