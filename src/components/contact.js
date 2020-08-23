@@ -9,7 +9,6 @@ import {
   mdiPhone, mdiAt, mdiLinkedin, mdiGithub,
 } from '@mdi/js';
 
-
 const Contact = () => (
   <Section id="contact-section">
     <Container>
@@ -42,7 +41,6 @@ const Contact = () => (
           </Title>
         </div>
       </div>
-
 
     </Container>
   </Section>

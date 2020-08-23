@@ -33,7 +33,7 @@ const Project = ({
       <Card.Footer>
         <a href={readMoreLink}>
           <Card.Footer.Item>
-              Read more
+            Read more
           </Card.Footer.Item>
         </a>
       </Card.Footer>
