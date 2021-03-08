@@ -45,7 +45,7 @@
     "develop": "gatsby develop",
     "format": "eslint src --fix",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 0.0.0.0",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "repository": {
