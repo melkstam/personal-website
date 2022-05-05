@@ -1,4 +1,3 @@
-// import { nanoid } from 'nanoid';
 import React, { useState, useEffect } from 'react';
 
 function getResult(command: string): string {
