@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-import React, { Fragment, useRef } from 'react';
+import React, { useRef } from 'react';
 import useTerminal from '../lib/useTerminal';
 
 const Terminal = () => {
