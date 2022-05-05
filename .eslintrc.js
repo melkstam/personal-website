@@ -4,6 +4,12 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
   ],
+  env: {
+    'jest/globals': true,
+  },
+  plugins: [
+    'jest',
+  ],
   rules: {
     'react/jsx-filename-extension': ['error',
       {
@@ -22,8 +28,8 @@ module.exports = {
       },
     ],
     'react/require-default-props': 'off',
-    'jsx-a11y/label-has-associated-control': ['error', {
-
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
     }],
   },
 };

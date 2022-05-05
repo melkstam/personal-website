@@ -1,13 +1,13 @@
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import React, { useState, useEffect } from 'react';
 
 function getResult(command: string): string {
   switch (command) {
     case 'help':
-      return `The avilable commands are:\n
-      help\n
-      about\n
-      links\n
+      return `The avilable commands are:
+      help
+      about
+      links
       portfolio`;
 
     case '':
@@ -47,7 +47,11 @@ function useTerminal(
   }, [inputRef]);
 
   const execute = () => {
-    const id = nanoid(8);
+    if (command === '') {
+      return;
+    }
+
+    const id = Math.random().toString(36).slice(2);
 
     const result = getResult(command);
     const newResult: CommandHistory = {

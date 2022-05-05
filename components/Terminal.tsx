@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-import React, { useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import useTerminal from '../lib/useTerminal';
 
 const Terminal = () => {
@@ -22,6 +22,7 @@ const Terminal = () => {
       <div
         ref={historyRef}
         className="flex-grow overflow-y-scroll mt-2 pl-4"
+        data-testid="command-results"
       >
         {history.map((his) => (
           <div key={his.id} className="pb-2 last:pb-0">
@@ -30,7 +31,17 @@ const Terminal = () => {
               {' '}
               {his.command}
             </p>
-            {his.result.split('\n').map((row) => <p className="text-neutral-100">{row}</p>)}
+            <div>
+              {his.result.split('\n').map((row, i) => (
+                <p
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={i}
+                  className="text-neutral-100"
+                >
+                  {row.trim()}
+                </p>
+              ))}
+            </div>
           </div>
         ))}
       </div>
@@ -41,6 +52,7 @@ const Terminal = () => {
         onClick={() => inputRef.current?.focus()}
         onKeyUp={() => inputRef.current?.focus()}
         className="flex w-full text-neutral-100 px-4 py-2"
+        data-testid="command-form"
       >
         <span className="pr-2">
           $
@@ -51,7 +63,7 @@ const Terminal = () => {
           name="commandInput"
           type="text"
           value={command}
-          aria-label="command input"
+          aria-label="Command input"
           className=" outline-none bg-transparent flex-grow"
           ref={inputRef}
           onChange={(event) => setCommand(event.target.value)}
