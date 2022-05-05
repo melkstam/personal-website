@@ -22,5 +22,8 @@ module.exports = {
       },
     ],
     'react/require-default-props': 'off',
+    'jsx-a11y/label-has-associated-control': ['error', {
+
+    }],
   },
 };
