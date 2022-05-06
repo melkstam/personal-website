@@ -7,7 +7,7 @@ const Terminal = () => {
   const historyRef = useRef<HTMLDivElement>(null);
 
   const {
-    history, execute, command, setCommand,
+    history, execute, command, setCommand, onArrowUpKey,
   } = useTerminal(inputRef, historyRef);
 
   const handleFormSubmit: React.FormEventHandler = (event) => {
@@ -17,22 +17,29 @@ const Terminal = () => {
   };
 
   return (
-    <div className="bg-neutral-900 h-96 rounded-xl flex flex-col shadow-lg">
+    <div className="bg-neutral-900 h-[32rem] rounded-xl flex flex-col shadow-xl border-4 border-neutral-700">
+
+      <div
+        className="px-4 py-2 text-xl text-white border-b-2 border-neutral-700 leading-tight"
+      >
+        terminal.exe
+      </div>
 
       <div
         ref={historyRef}
-        className="flex-grow overflow-y-scroll mt-2 pl-4"
+        className="flex-grow overflow-y-scroll mt-4 pl-4"
         data-testid="command-results"
       >
         {history.map((his) => (
-          <div key={his.id} className="pb-2 last:pb-0">
-            <p className="text-neutral-300 ">
+          <div key={his.id} className="pb-4 last:pb-0">
+            <p className="text-neutral-500 ">
               $
               {' '}
               {his.command}
             </p>
-            <div>
-              {his.result.split('\n').map((row, i) => (
+            <div className="prose prose-invert prose-p:mt-2 prose-p:first:mt-0 prose-p:m-0 prose-p:leading-normal max-w-none text-neutral-200">
+              {his.result}
+              {/* {his.result.split('\n').map((row, i) => (
                 <p
                   // eslint-disable-next-line react/no-array-index-key
                   key={i}
@@ -40,7 +47,7 @@ const Terminal = () => {
                 >
                   {row.trim()}
                 </p>
-              ))}
+              ))} */}
             </div>
           </div>
         ))}
@@ -51,7 +58,7 @@ const Terminal = () => {
         onSubmit={handleFormSubmit}
         onClick={() => inputRef.current?.focus()}
         onKeyUp={() => inputRef.current?.focus()}
-        className="flex w-full text-neutral-100 px-4 py-2"
+        className="flex w-full text-neutral-50 px-4 py-4"
         data-testid="command-form"
       >
         <span className="pr-2">
@@ -66,6 +73,7 @@ const Terminal = () => {
           aria-label="Command input"
           className=" outline-none bg-transparent flex-grow"
           ref={inputRef}
+          onKeyUp={onArrowUpKey}
           onChange={(event) => setCommand(event.target.value)}
         />
 

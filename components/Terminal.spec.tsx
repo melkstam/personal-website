@@ -64,6 +64,31 @@ describe('input', () => {
 
     expect(input).toHaveFocus();
   });
+
+  it('should set the last command on arrow up', () => {
+    render(<Terminal />);
+
+    const input = screen.getByLabelText<HTMLInputElement>('Command input');
+
+    fireEvent.change(input, { target: { value: 'test' } });
+    fireEvent.submit(input);
+
+    fireEvent.change(input, { target: { value: 'other' } });
+    fireEvent.keyUp(input, { key: 'ArrowUp' });
+
+    expect(input).toHaveValue('test');
+  });
+
+  it('should it do nothing if arrow up is clicked with no history', () => {
+    render(<Terminal />);
+
+    const input = screen.getByLabelText<HTMLInputElement>('Command input');
+
+    fireEvent.change(input, { target: { value: 'test' } });
+    fireEvent.keyUp(input, { key: 'ArrowUp' });
+
+    expect(input).toHaveValue('test');
+  });
 });
 
 describe('commands', () => {
@@ -124,46 +149,69 @@ describe('commands', () => {
     fireEvent.change(input, { target: { value: 'unknown' } });
     fireEvent.submit(input);
 
-    const expected = [
-      'Cannot find command `unknown`, please run `help` to get the available commands',
-    ];
-
     const result = Array.from(commandResults.children)[0];
-    const response = Array.from(result.children)[1];
 
-    expect(Array.from(response.children)).toHaveLength(expected.length);
-
-    for (let i = 0; i < expected.length; i += 1) {
-      expect(response.children.item(i)?.textContent).toBe(expected[i]);
-    }
+    expect(result).toHaveTextContent('unknown');
+    expect(result).toHaveTextContent('help');
   });
 
   describe('help', () => {
-    it('should return the result', () => {
+    const command = 'help';
+
+    it('should print the expected result', () => {
       render(<Terminal />);
 
       const input = screen.getByLabelText<HTMLInputElement>('Command input');
       const commandResults = screen.getByTestId<HTMLDivElement>('command-results');
 
-      fireEvent.change(input, { target: { value: 'help' } });
+      fireEvent.change(input, { target: { value: command } });
       fireEvent.submit(input);
 
-      const expected = [
-        'The avilable commands are:',
-        'help',
-        'about',
-        'links',
-        'portfolio',
-      ];
+      const result = Array.from(commandResults.children)[0];
+
+      expect(result).toHaveTextContent('help');
+      expect(result).toHaveTextContent('about');
+      expect(result).toHaveTextContent('contact');
+      expect(result).toHaveTextContent('portfolio');
+    });
+  });
+
+  describe('about', () => {
+    const command = 'about';
+
+    it('should print the expected result', () => {
+      render(<Terminal />);
+
+      const input = screen.getByLabelText<HTMLInputElement>('Command input');
+      const commandResults = screen.getByTestId<HTMLDivElement>('command-results');
+
+      fireEvent.change(input, { target: { value: command } });
+      fireEvent.submit(input);
 
       const result = Array.from(commandResults.children)[0];
-      const response = Array.from(result.children)[1];
 
-      expect(Array.from(response.children)).toHaveLength(expected.length);
+      expect(result).toHaveTextContent('Skrym');
+    });
+  });
 
-      for (let i = 0; i < expected.length; i += 1) {
-        expect(response.children.item(i)?.textContent).toBe(expected[i]);
-      }
+  describe('contact', () => {
+    const command = 'contact';
+
+    it('should print the expected result', () => {
+      render(<Terminal />);
+
+      const input = screen.getByLabelText<HTMLInputElement>('Command input');
+      const commandResults = screen.getByTestId<HTMLDivElement>('command-results');
+
+      fireEvent.change(input, { target: { value: command } });
+      fireEvent.submit(input);
+
+      const result = Array.from(commandResults.children)[0];
+
+      expect(result).toHaveTextContent('+46 723 63 63 16');
+      expect(result).toHaveTextContent('vilhelm.melkstam@gmail.com');
+      expect(result).toHaveTextContent('GitHub');
+      expect(result).toHaveTextContent('LinkedIn');
     });
   });
 });
