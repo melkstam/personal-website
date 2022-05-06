@@ -1,3 +1,9 @@
+const { withPlausibleProxy } = require('next-plausible');
+
+const plausibleWrapper = withPlausibleProxy({
+  customDomain: 'https://plausible.melkstam.com',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -6,4 +12,6 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const config = plausibleWrapper(nextConfig);
+
+module.exports = config;
