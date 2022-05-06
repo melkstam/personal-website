@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { usePlausible } from 'next-plausible';
-import { useRouter } from 'next/router';
 
 export function getResult(command: string): ReactNode {
   switch (command) {
