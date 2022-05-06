@@ -39,15 +39,6 @@ const Terminal = () => {
             </p>
             <div className="prose prose-invert prose-p:mt-2 prose-p:first:mt-0 prose-p:m-0 prose-p:leading-normal max-w-none text-neutral-200">
               {his.result}
-              {/* {his.result.split('\n').map((row, i) => (
-                <p
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={i}
-                  className="text-neutral-100"
-                >
-                  {row.trim()}
-                </p>
-              ))} */}
             </div>
           </div>
         ))}
