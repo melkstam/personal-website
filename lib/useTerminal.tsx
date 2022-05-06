@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { usePlausible } from 'next-plausible';
+import { useRouter } from 'next/router';
 
 export function getResult(command: string): ReactNode {
   switch (command) {
@@ -40,6 +41,12 @@ export function getResult(command: string): ReactNode {
             where I help optimizing logistics and removing air from packages sent home to you.
           </p>
         </>
+      );
+
+    case 'beer':
+      window.location.href = 'https://untappd.com/user/vilhelmmelkstam';
+      return (
+        <p>Loading…</p>
       );
 
     default:
