@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { usePlausible } from 'next-plausible';
 
 function getResult(command: string): string {
   switch (command) {
@@ -27,6 +28,7 @@ function useTerminal(
 ) {
   const [history, setHistory] = useState<CommandHistory[]>([]);
   const [command, setCommand] = useState<string>('');
+  const plausible = usePlausible();
 
   useEffect(() => {
     if (!historyRef.current) {
@@ -49,6 +51,12 @@ function useTerminal(
     if (command === '') {
       return;
     }
+
+    plausible('command', {
+      props: {
+        command,
+      },
+    });
 
     const id = Math.random().toString(36).slice(2);
 
