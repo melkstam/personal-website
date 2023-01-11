@@ -1,3 +1,7 @@
-.cache
+Dockerfile
+.dockerignore
 node_modules
-public
+npm-debug.log
+README.md
+.next
+.git

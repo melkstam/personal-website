@@ -1,26 +1,35 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-  },
   extends: [
+    'next/core-web-vitals',
     'airbnb',
+    'airbnb/hooks',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
+  env: {
+    'jest/globals': true,
   },
   plugins: [
-    'react',
+    'jest',
   ],
   rules: {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    'react/jsx-filename-extension': ['error',
+      {
+        extensions: ['.tsx'],
+      },
+    ],
+    'react/function-component-definition': ['error',
+      {
+        namedComponents: 'arrow-function',
+      },
+    ],
+    'import/extensions': ['error', 'ignorePackages',
+      {
+        tsx: 'never',
+        ts: 'never',
+      },
+    ],
+    'react/require-default-props': 'off',
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
+    }],
   },
 };
