@@ -1,20 +1,13 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
-const defaultTheme = require('tailwindcss/defaultTheme');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.tsx',
-    './components/**/*.tsx',
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        mono: ['Fira code', ...defaultTheme.fontFamily.mono],
-      },
-    },
+    extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography')
   ],
-};
+}

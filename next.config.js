@@ -1,17 +1,11 @@
-const { withPlausibleProxy } = require('next-plausible');
+const { withContentlayer } = require('next-contentlayer');
 
-const plausibleWrapper = withPlausibleProxy({
-  customDomain: 'https://plausible.melkstam.com',
-});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   experimental: {
-    outputStandalone: true,
+    appDir: true,
   },
 };
 
-const config = plausibleWrapper(nextConfig);
-
-module.exports = config;
+module.exports = withContentlayer(nextConfig);
