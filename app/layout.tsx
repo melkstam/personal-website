@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Inter } from "@next/font/google";
 import clsx from "clsx";
-import Link from "next/link";
+import AnalyticsWrapper from "../components/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +29,8 @@ export default function RootLayout({
         <footer className="container mx-auto px-2 text-white/40 max-w-lg py-4 mt-4">
           &copy; {new Date().getFullYear()} Vilhelm Melkstam
         </footer>
+
+        <AnalyticsWrapper />
       </body>
     </html>
   );
