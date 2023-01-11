@@ -1,5 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import headerImage from "../public/img/oily-bw.jpg";
+
+import { allPosts } from "contentlayer/generated";
+
+const sortedPosts = allPosts.sort(
+  (a, b) => Date.parse(b.date) - Date.parse(a.date),
+);
+
+const dateFormatter = Intl.DateTimeFormat("sv-SE", {
+  dateStyle: "long",
+});
 
 function Home() {
   return (
@@ -12,10 +23,23 @@ function Home() {
         src={headerImage}
         alt="Header image"
         priority
-        className="h-32 object-cover mt-4"
+        className="h-40 object-cover mt-8"
       />
 
       <h2 className="text-white/95 font-black text-4xl mt-12">Inlägg</h2>
+
+      <div className="pt-2">
+        {sortedPosts.map((post) => (
+          <div key={post.slug} className="my-4">
+            <Link href={post.url}>
+              <h3 className="text-white/80 text-2xl font-bold">{post.title}</h3>
+              <p className="text-white/60">
+                {dateFormatter.format(new Date(post.date))}
+              </p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

@@ -21,7 +21,15 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="min-h-screen bg-black">{children}</body>
+      <body className="min-h-screen bg-black flex flex-col">
+        {children}
+
+        <div className="grow" />
+
+        <footer className="container mx-auto px-2 text-white/40 max-w-lg py-4 mt-4">
+          &copy; {new Date().getFullYear()} Vilhelm Melkstam
+        </footer>
+      </body>
     </html>
   );
 }

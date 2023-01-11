@@ -10,11 +10,16 @@ function PostLayout(props: PostLayoutProps) {
   return (
     <>
       <header>
-        <div className="container mx-auto px-4 max-w-md text-white/90 font-black">
-          <Link href="/">Melkstam</Link>
+        <div className="container mx-auto px-2 max-w-lg py-4 mb-8">
+          <Link
+            href="/"
+            className="text-white/90 font-black text-2xl hover:underline underline-offset-2"
+          >
+            Melkstams Blogg
+          </Link>
         </div>
       </header>
-      <main className="container mx-auto px-4 max-w-md">{children}</main>
+      <main className="container mx-auto px-2 max-w-lg">{children}</main>
     </>
   );
 }
