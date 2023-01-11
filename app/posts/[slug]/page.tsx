@@ -9,7 +9,7 @@ const dateFormatter = Intl.DateTimeFormat("sv-SE", {
   dateStyle: "long",
 });
 
-interface PostProps {
+export interface PostProps {
   params: {
     slug: string;
   };

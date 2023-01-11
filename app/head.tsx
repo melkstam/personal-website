@@ -1,10 +1,10 @@
+import { NextSeo } from "next-seo";
+import NEXT_SEO_DEFAULT from "../lib/defaultSEO";
+
 export default function Head() {
   return (
     <>
-      <title>Melkstams blogg</title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Min blogg" />
-      <link rel="icon" href="/favicon.ico" />
+      <NextSeo {...NEXT_SEO_DEFAULT} />
     </>
   );
 }

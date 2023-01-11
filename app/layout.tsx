@@ -20,7 +20,12 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head />
+      <head>
+        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      </head>
+
       <body className="min-h-screen bg-black flex flex-col">
         {children}
 
