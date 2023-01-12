@@ -4,9 +4,9 @@ import { Inter } from "@next/font/google";
 import clsx from "clsx";
 import AnalyticsWrapper from "../components/analytics";
 
-const inter = Inter({
+const sans = Inter({
   subsets: ["latin"],
-  variable: "--font-primary",
+  variable: "--font-sans",
 });
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={clsx(inter.variable)}>
+    <html lang="sv" className={clsx(sans.variable)}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
