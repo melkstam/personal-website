@@ -16,7 +16,7 @@ const dateFormatter = Intl.DateTimeFormat("sv-SE", {
   dateStyle: "long",
 });
 
-const screens = twConfig.theme?.screens as Record<string, string>;
+const maxWidths = twConfig.theme?.maxWidth as Record<string, string>;
 
 function Home() {
   return (
@@ -32,7 +32,7 @@ function Home() {
           priority
           fill
           className="object-cover"
-          sizes={`(max-width: ${screens["lg"]}) 100vw, ${screens["lg"]}`}
+          sizes={`(max-width: ${maxWidths["lg"]}) 100vw, ${maxWidths["lg"]}`}
         />
       </div>
 
