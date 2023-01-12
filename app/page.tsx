@@ -42,7 +42,9 @@ function Home() {
         {sortedPosts.map((post) => (
           <div key={post.slug} className="my-4">
             <Link href={post.url}>
-              <h3 className="text-white/80 text-2xl font-bold">{post.title}</h3>
+              <h3 className="text-white/80 text-2xl font-bold hover:underline underline-offset-2">
+                {post.title}
+              </h3>
               <p className="text-white/60">
                 {dateFormatter.format(new Date(post.date))}
               </p>
