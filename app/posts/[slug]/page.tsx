@@ -33,8 +33,8 @@ function Post(props: PostProps) {
 
   return (
     <article className="prose prose-invert max-w-none prose-lg">
-      <h1 className="mb-0">{post.title}</h1>
-      <p className="mt-0 mb-8">Publicerad {dateFormatter.format(date)}</p>
+      <p className="mb-0">Publicerad {dateFormatter.format(date)}</p>
+      <h1 className="mt-0">{post.title}</h1>
 
       <MDXContent components={mdxComponents} />
     </article>
