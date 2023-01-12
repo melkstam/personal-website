@@ -31,6 +31,7 @@ function Home() {
           alt="Header image"
           priority
           fill
+          placeholder="blur"
           className="object-cover"
           sizes={`(max-width: ${maxWidths["lg"]}) 100vw, ${maxWidths["lg"]}`}
         />
