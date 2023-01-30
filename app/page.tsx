@@ -21,7 +21,7 @@ const maxWidths = twConfig.theme?.maxWidth as Record<string, string>;
 function Home() {
   return (
     <main className="container mx-auto px-2 max-w-lg ">
-      <h1 className="text-white font-black text-7xl mt-12">
+      <h1 className="text-white font-display font-black text-7xl mt-12">
         Melkstams{"\n"}Blogg
       </h1>
 

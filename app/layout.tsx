@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Inter } from "@next/font/google";
+import { Inter, Work_Sans } from "@next/font/google";
 import clsx from "clsx";
 import AnalyticsWrapper from "../components/analytics";
 
@@ -9,13 +9,18 @@ const sans = Inter({
   variable: "--font-sans",
 });
 
+const display = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={clsx(sans.variable)}>
+    <html lang="sv" className={clsx(sans.variable, display.variable)}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
